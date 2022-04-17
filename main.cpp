@@ -9,7 +9,7 @@ int main() {
 //    fsm.toDot();
     Parser parser(cfg);
 //    parser.readParse("input.txt");
-    parser.parse("input2.txt");
+    parser.parse("input.txt");
 //    auto first = cfg.firstSet();
 //    auto follow = cfg.followsSet();
 //    set<string> s{"auto","bus","aa"};

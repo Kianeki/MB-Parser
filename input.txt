@@ -1,20 +1,20 @@
 type int
 identifiers a
-assignment =
+equal =
 int 5
 plus +
 int 2
 mul *
 int 3
-separator ;
+semicolon ;
 identifiers a
-assignment =
+equal =
 identifiers a
 div /
 int 10
 minus -
 int 3
-separator ;
+semicolon ;
 int 5
-separator ;
+semicolon ;
 EOF

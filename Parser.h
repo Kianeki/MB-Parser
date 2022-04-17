@@ -65,7 +65,7 @@ public:
                     token = tokens[i];
                 }
                 else if(tableEntry.first == "acc"){
-                    printDerivation(reductionStack);
+//                    printDerivation(reductionStack);
                     for(const string& s: tokenValues){
                         cout<< s<<" ";
                     }
