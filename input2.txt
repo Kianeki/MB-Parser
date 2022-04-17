@@ -1,0 +1,25 @@
+type int
+identifiers a
+equal =
+int 6
+semicolon ;
+type int
+identifiers b
+equal =
+identifiers a
+semicolon ;
+statement if
+lparen (
+identifiers a
+plus +
+identifiers b
+operator >
+int 10
+rparen )
+lcbrace {
+statement return
+minus -
+int 1
+semicolon ;
+rcbrace }
+EOF

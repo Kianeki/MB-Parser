@@ -1,0 +1,3 @@
+/home/kiani/CLionProjects/MB2/cmake-build-debug/CMakeFiles/MB2.dir
+/home/kiani/CLionProjects/MB2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kiani/CLionProjects/MB2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

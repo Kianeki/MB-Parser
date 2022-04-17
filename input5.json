@@ -1,0 +1,30 @@
+{
+  "Variables": ["S","Expression","Declaration","Assign", "Sum", "Product", "Var", "Start", "Condition","Body"],
+  "Terminals": ["semicolon","mul", "plus","minus", "div","EOF","int","float","identifiers","type","equal","lparen","rparen", "statement","lcbrace","rcbrace", "operator"],
+  "Productions": [
+    {"head": "S", "body": ["Start"]},
+    {"head": "Start", "body": ["Expression","semicolon"]},
+    {"head": "Start", "body": ["statement","lparen","Condition","rparen","Body"]},
+    {"head": "Start", "body": ["statement","Sum", "semicolon"]},
+    {"head": "Start", "body": ["statement", "semicolon"]},
+    {"head": "Body", "body": ["lcbrace","Start","rcbrace"]},
+    {"head": "Condition", "body": ["Sum", "operator","Sum"]},
+    {"head": "Expression", "body": ["Sum"]},
+    {"head": "Expression", "body": ["type","Assign"]},
+    {"head": "Expression", "body": ["Assign"]},
+    {"head": "Assign", "body": ["identifiers","equal","Sum"]},
+    {"head": "Sum", "body": ["Sum","plus","Product"]},
+    {"head": "Sum", "body": ["Sum","minus","Product"]},
+    {"head": "Sum", "body": ["Product"]},
+    {"head": "Product", "body": ["Product","mul","Var"]},
+    {"head": "Product", "body": ["Product","div","Var"]},
+    {"head": "Product", "body": ["Var"]},
+    {"head": "Product", "body": ["minus","Var"]},
+    {"head": "Product", "body": ["plus","Var"]},
+    {"head": "Var", "body": ["lparen","Sum","rparen"]},
+    {"head": "Var", "body": ["int"]},
+    {"head": "Var", "body": ["float"]},
+    {"head": "Var", "body": ["identifiers"]}
+  ],
+  "Start": "S"
+}

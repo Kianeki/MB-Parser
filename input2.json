@@ -1,0 +1,15 @@
+{
+  "Variables": ["S","Expression"],
+  "Terminals": ["+", "-","*","/", "ident","INT", "FLOAT", "separator", "EOF"],
+  "Productions": [
+    {"head": "S", "body": ["Expression", "separator", "EOF"]},
+    {"head": "Expression", "body": ["Expression","+","Expression"]},
+    {"head": "Expression", "body": ["Expression","-","Expression"]},
+    {"head": "Expression", "body": ["Expression","*","Expression"]},
+    {"head": "Expression", "body": ["Expression","/","Expression"]},
+    {"head": "Expression", "body": ["ident"]},
+    {"head": "Expression", "body": ["INT"]},
+    {"head": "Expression", "body": ["FLOAT"]}
+  ],
+  "Start": "S"
+}

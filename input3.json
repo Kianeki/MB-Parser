@@ -1,0 +1,24 @@
+{
+  "Variables": ["S","Expression","Declaration","Assign", "Sum", "Product", "Var"],
+  "Terminals": ["semicolon","mul", "plus","minus", "div","EOF","int","float","identifiers","type","equal","lparen","rparen"],
+  "Productions": [
+    {"head": "S", "body": ["Expression","semicolon"]},
+    {"head": "Expression", "body": ["Sum"]},
+    {"head": "Expression", "body": ["type","Assign"]},
+    {"head": "Expression", "body": ["Assign"]},
+    {"head": "Assign", "body": ["identifiers","equal","Sum"]},
+    {"head": "Sum", "body": ["Sum","plus","Product"]},
+    {"head": "Sum", "body": ["Sum","minus","Product"]},
+    {"head": "Sum", "body": ["Product"]},
+    {"head": "Product", "body": ["Product","mul","Var"]},
+    {"head": "Product", "body": ["Product","div","Var"]},
+    {"head": "Product", "body": ["Var"]},
+    {"head": "Product", "body": ["minus","Var"]},
+    {"head": "Product", "body": ["plus","Var"]},
+    {"head": "Var", "body": ["lparen","Sum","rparen"]},
+    {"head": "Var", "body": ["int"]},
+    {"head": "Var", "body": ["float"]},
+    {"head": "Var", "body": ["identifiers"]}
+  ],
+  "Start": "S"
+}

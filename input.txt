@@ -1,0 +1,20 @@
+type int
+identifiers a
+assignment =
+int 5
+plus +
+int 2
+mul *
+int 3
+separator ;
+identifiers a
+assignment =
+identifiers a
+div /
+int 10
+minus -
+int 3
+separator ;
+int 5
+separator ;
+EOF

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/MB2.dir/main.cpp.o CMakeFiles/MB2.dir/CFG.cpp.o CMakeFiles/MB2.dir/FSM.cpp.o CMakeFiles/MB2.dir/ParseTable.cpp.o CMakeFiles/MB2.dir/Parser.cpp.o -o MB2 
