@@ -234,16 +234,20 @@ void print(){
         map<string,set<string>> FOLLOWS;
         for(const string& var : V){
             FOLLOWS[var]= calcFollows(var);
+            if(/*var == "Statement" ||*/ var == "Selection-Statement"){ //dangling else probleem
+                FOLLOWS[var].erase(FOLLOWS[var].find("else"));
+            }
         }
         FOLLOWS[S+"'"] = set<string>{"EOF"};
         return FOLLOWS;
     }
-    set<string> calcFollows(const string& var){
+    set<string> calcFollows(const string& var, set<string> previous_var={}){
         set<string> FOLLOWS;
         if(var == S){
-            for(const auto& t: T){
-                FOLLOWS.insert(t);
-            }
+            FOLLOWS.insert("EOF");
+//            for(const auto& t: T){
+//                FOLLOWS.insert(t);
+//            }
             return FOLLOWS;
         }
         for(const auto& prod: P){
@@ -262,8 +266,11 @@ void print(){
                     continue;
                 }
                 else{
-                    set<string> temp = calcFollows(prod.first);
-                    FOLLOWS.insert(temp.begin(),temp.end());
+                    if(previous_var.find(prod.first) == previous_var.end()){
+                        previous_var.insert(var);
+                        set<string> temp = calcFollows(prod.first,previous_var);
+                        FOLLOWS.insert(temp.begin(),temp.end());
+                    }
                 }
             }
         }

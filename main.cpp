@@ -3,7 +3,7 @@
 #include "FSM.h"
 #include "Parser.h"
 int main() {
-    CFG cfg("input5.json");
+    CFG cfg("input2.json");
 //    cfg.print();
 //    FSM fsm(cfg);
 //    fsm.toDot();

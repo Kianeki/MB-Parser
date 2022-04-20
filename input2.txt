@@ -1,3 +1,4 @@
+lcbrace {
 type int
 identifiers a
 equal =
@@ -8,7 +9,7 @@ identifiers b
 equal =
 identifiers a
 semicolon ;
-statement if
+if if
 lparen (
 identifiers a
 plus +
@@ -17,9 +18,12 @@ operator >
 int 10
 rparen )
 lcbrace {
-statement return
+int 5
+semicolon ;
+return return
 minus -
 int 1
 semicolon ;
+rcbrace }
 rcbrace }
 EOF
